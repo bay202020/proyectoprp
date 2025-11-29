@@ -1,2 +1,0 @@
-# proyectoprp
-Proyecto de prp
