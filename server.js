@@ -16,6 +16,7 @@ const DEBUG = process.env.DEBUG === 'true' || false;
 // ------------------------------
 // DB pool
 // ------------------------------
+
 const dbConfig = {
   host: process.env.DB_HOST || 'interchange.proxy.rlwy.net',
   user: process.env.DB_USER || 'root',
