@@ -1,0 +1,101 @@
+employee_id,nombre,departamento,fecha_ingreso,antiguedad_meses,salario,satisfaccion,ingresos_mensuales,horas_extras,puesto,rol_del_puesto,otros,creado_at,actualizado_at,edad
+E0,Lic. Nelly Pabón,Calidad,2015-06-30,125,1551,1,1551,No,Supervisor,Ingeniero civil,,2025-11-26 07:42:21,2025-11-26 07:42:21,37
+E1,María Cristina Marisela Hernández Villaseñor,Producción,2014-11-27,132,730,2,730,No,Operario,Zoólogo,,2025-11-26 07:42:21,2025-11-26 07:42:21,25
+E2,Gabriel Bustamante,Producción,2023-03-21,32,1251,2,1251,No,Asistente administrativo,Preparador y elaborador de tabaco y sus productos,,2025-11-26 07:42:21,2025-11-26 07:42:21,48
+E3,Ing. Germán Lebrón,TI,2014-10-30,133,4138,1,4138,Sí,Gerente de planta,Operador de instalaciones para la preparación de pasta para papel y papel,,2025-11-26 07:42:21,2025-11-26 07:42:21,29
+E4,Ana Luisa Cristina Echeverría Almaraz,Producción,2023-07-17,28,2235,4,2235,No,Supervisor,Guardia de protección,,2025-11-26 07:42:21,2025-11-26 07:42:21,42
+E5,Sr(a). Nelly Madrid,TI,2016-07-29,112,961,2,961,No,Asistente administrativo,Operario del tratamiento de la madera,,2025-11-26 07:42:21,2025-11-26 07:42:21,55
+E6,Dr. Benito Ledesma,Ventas,2016-06-28,113,1377,1,1377,No,Operario,Tenedor de libros,,2025-11-26 07:42:21,2025-11-26 07:42:21,34
+E7,Ing. Iván Morales,Ventas,2013-08-25,147,2101,3,2101,No,Vendedor,Profesor de idiomas,,2025-11-26 07:42:21,2025-11-26 07:42:21,43
+E8,Héctor Cortez,Ventas,2013-11-02,144,2747,2,2747,No,Supervisor,Minero,,2025-11-26 07:42:21,2025-11-26 07:42:21,60
+E9,Barbara Camila Arriaga,Producción,2014-12-05,131,2810,2,2810,No,Analista de calidad,Técnico agropecuario,,2025-11-26 07:42:21,2025-11-26 07:42:21,55
+E10,Francisco Arce Montañez,TI,2011-06-27,173,4643,2,4643,No,Gerente de planta,Técnico en ciencias físicas y químicas,,2025-11-26 07:42:21,2025-11-26 07:42:21,37
+E11,Lucas Barbara Cisneros,Ventas,2013-03-16,152,2116,3,2116,No,Asistente administrativo,Oficial de préstamos y créditos,,2025-11-26 07:42:21,2025-11-26 07:42:21,49
+E12,Rufino Barrientos Durán,Diseño,2018-02-13,93,1995,4,1995,Sí,Asistente administrativo,Diseñador multimedia,,2025-11-26 07:42:21,2025-11-26 07:42:21,45
+E13,Dr. Renato Véliz,Logística,2024-01-28,22,812,1,812,No,Operario,Zoólogo,,2025-11-26 07:42:21,2025-11-26 07:42:21,29
+E14,Mauro Jonás Valdez Vázquez,Producción,2022-05-30,42,1883,1,1883,No,Vendedor,Entrevistador de encuestas,,2025-11-26 07:42:21,2025-11-26 07:42:21,36
+E15,Lic. Leticia de la Torre,Diseño,2012-07-02,160,3074,4,3074,Sí,Analista de calidad,Lavandero,,2025-11-26 07:42:21,2025-11-26 07:42:21,41
+E16,Rosalia Rubén Ledesma,Recursos Humanos,2021-05-21,54,2525,2,2525,Sí,Analista de calidad,Director de servicios de bienestar social,,2025-11-26 07:42:21,2025-11-26 07:42:21,31
+E17,Lic. Ángel Ruiz,Finanzas,2010-01-05,190,1252,1,1252,Sí,Técnico de mantenimiento,Operador de autoelevadoras,,2025-11-26 07:42:21,2025-11-26 07:42:21,53
+E18,Beatriz Almonte,Calidad,2011-04-20,175,4259,1,4259,No,Gerente de planta,Suboficial de las fuerzas armadas,,2025-11-26 07:42:21,2025-11-26 07:42:21,35
+E19,Leticia Eloisa Regalado Quintana,Finanzas,2012-10-27,157,3057,2,3057,No,Supervisor,Bibliotecarios,,2025-11-26 07:42:21,2025-11-26 07:42:21,54
+E20,Carla Julia Sandoval Rodríguez,Logística,2014-07-06,136,1233,3,1233,No,Asistente administrativo,Diseñador de prendas,,2025-11-26 07:42:21,2025-11-26 07:42:21,54
+E21,Zoé Frida Urbina Galván,Producción,2015-01-15,130,1047,2,1047,No,Vendedor,Biólogo,,2025-11-26 07:42:21,2025-11-26 07:42:21,35
+E22,Óscar Griego,Producción,2011-04-28,175,772,3,772,Sí,Operario,Mecánico y reparador de instrumentos de precisión,,2025-11-26 07:42:21,2025-11-26 07:42:21,60
+E23,Israel Ivonne Medrano,Finanzas,2014-10-22,133,2070,2,2070,No,Diseñador de moda,Bibliotecarios,,2025-11-26 07:42:21,2025-11-26 07:42:21,51
+E24,Hermelinda Helena Olmos,TI,2012-03-05,164,1189,4,1189,No,Asistente administrativo,Entrevistador de investigaciones de mercados,,2025-11-26 07:42:21,2025-11-26 07:42:21,26
+E25,Paola Arriaga Hernádez,TI,2011-05-12,174,1389,1,1389,Sí,Operario,Operario del tratamiento de la madera,,2025-11-26 07:42:21,2025-11-26 07:42:21,26
+E26,Josefina Víctor Soria,Recursos Humanos,2013-02-22,153,2598,4,2598,Sí,Diseñador de moda,Cazador,,2025-11-26 07:42:21,2025-11-26 07:42:21,48
+E27,Ing. Gustavo Alarcón,Compras,2012-03-13,164,2407,1,2407,No,Supervisor,Camarero de mesa,,2025-11-26 07:42:21,2025-11-26 07:42:21,55
+E28,Silvia Gregorio Pedroza,Logística,2020-11-22,60,1840,1,1840,Sí,Diseñador de moda,Músico,,2025-11-26 07:42:21,2025-11-26 07:42:21,46
+E29,Sr(a). Liliana Vaca,Compras,2020-03-16,68,1099,4,1099,Sí,Operario,Artista plástico,,2025-11-26 07:42:21,2025-11-26 07:42:21,36
+E30,Eric Amador,Producción,2022-12-28,35,1945,3,1945,Sí,Analista de calidad,Corrector de pruebas de imprenta,,2025-11-26 07:42:21,2025-11-26 07:42:21,23
+E31,Rosalia Mora,Compras,2013-07-13,148,1829,1,1829,No,Vendedor,Pulidor de vidrio,,2025-11-26 07:42:21,2025-11-26 07:42:21,53
+E32,Lorena Maestas,Ventas,2015-04-11,127,2718,1,2718,No,Supervisor,Conductor de taxis,,2025-11-26 07:42:21,2025-11-26 07:42:21,24
+E33,Noelia Cristal Padrón Maldonado,Recursos Humanos,2022-09-05,38,2146,2,2146,No,Asistente administrativo,Conductor de automóviles,,2025-11-26 07:42:21,2025-11-26 07:42:21,57
+E34,Lucía Vicente Rodríguez Franco,Recursos Humanos,2018-11-17,84,3977,4,3977,No,Gerente de planta,Profesional del trabajo social,,2025-11-26 07:42:21,2025-11-26 07:42:21,36
+E35,Aldonza Modesto Garibay,Calidad,2023-12-07,23,1519,1,1519,No,Supervisor,Cocinero,,2025-11-26 07:42:21,2025-11-26 07:42:21,49
+E36,Leonor Solano Madera,TI,2011-07-18,172,1771,3,1771,Sí,Analista de calidad,Ayudante de ambulancia,,2025-11-26 07:42:21,2025-11-26 07:42:21,42
+E37,Aurora Bonilla Valle,Compras,2010-03-06,188,2752,3,2752,No,Analista de calidad,Oficial de las fuerzas armadas,,2025-11-26 07:42:21,2025-11-26 07:42:21,53
+E38,Frida Dulce Madera,Compras,2012-08-03,159,1775,2,1775,No,Supervisor,Practicante y asistente médico,,2025-11-26 07:42:21,2025-11-26 07:42:21,36
+E39,Carolina Concepción Montoya de León,Recursos Humanos,2014-07-26,136,2969,4,2969,No,Diseñador de moda,Antropólogo,,2025-11-26 07:42:21,2025-11-26 07:42:21,41
+E40,Lic. Fidel Botello,Producción,2019-07-02,76,794,1,794,No,Operario,Profesor de formación profesional,,2025-11-26 07:42:21,2025-11-26 07:42:21,60
+E41,Guillermina Luz Tijerina Jaimes,Compras,2013-08-16,147,1352,4,1352,No,Técnico de mantenimiento,Operador de instalaciones de procesamiento de la madera,,2025-11-26 07:42:21,2025-11-26 07:42:21,36
+E42,Natividad Caballero,TI,2022-03-28,44,1654,2,1654,No,Supervisor,"Operador de máquinas de preparación de fibras, hilado y devanado",,2025-11-26 07:42:21,2025-11-26 07:42:21,29
+E43,Lic. Luis Manuel Nieves,Ventas,2010-11-23,180,1015,2,1015,No,Operario,"Operario de la conservación de frutas, legumbres y verduras",,2025-11-26 07:42:21,2025-11-26 07:42:21,43
+E44,Juan Ángela Grijalva,Ventas,2023-12-03,23,5293,2,5293,No,Gerente de planta,"Empleado de servicios estadísticos, financieros y de seguros",,2025-11-26 07:42:21,2025-11-26 07:42:21,46
+E45,Dr. Rocío Gonzales,TI,2014-01-09,142,1122,4,1122,No,Técnico de mantenimiento,Zapatero,,2025-11-26 07:42:21,2025-11-26 07:42:21,21
+E46,Aldo Humberto Hernández Valdés,Producción,2012-06-04,161,2046,4,2046,Sí,Diseñador de moda,Declarante de aduana,,2025-11-26 07:42:21,2025-11-26 07:42:21,30
+E47,María Luisa Débora Almaraz Archuleta,Ventas,2015-02-08,129,1516,4,1516,No,Vendedor,Conductor de automóviles,,2025-11-26 07:42:21,2025-11-26 07:42:21,39
+E48,Salma Quezada,Logística,2017-11-16,96,3083,3,3083,No,Supervisor,Impresor,,2025-11-26 07:42:21,2025-11-26 07:42:21,37
+E49,Sr(a). Arturo Quezada,Recursos Humanos,2023-01-09,34,2034,1,2034,Sí,Supervisor,Astrónomos,,2025-11-26 07:42:21,2025-11-26 07:42:21,31
+E50,Elvia Lourdes Pulido,Compras,2019-10-15,73,1507,1,1507,No,Asistente administrativo,Curador de museos,,2025-11-26 07:42:21,2025-11-26 07:42:21,40
+E51,Mateo Bravo,Compras,2019-10-13,73,2021,2,2021,No,Diseñador de moda,Empleado encargado de las nóminas,,2025-11-26 07:42:21,2025-11-26 07:42:21,22
+E52,Lic. Omar Orosco,Calidad,2023-12-23,23,2860,3,2860,No,Supervisor,Operador de instalaciones mineras,,2025-11-26 07:42:21,2025-11-26 07:42:21,41
+E53,Jacobo Zamora Gamez,Ventas,2016-08-19,111,1468,4,1468,No,Asistente administrativo,Secretario médicos,,2025-11-26 07:42:21,2025-11-26 07:42:21,45
+E54,Ángela Carbajal Varela,Logística,2023-10-22,25,2187,1,2187,No,Asistente administrativo,Director de servicios de cuidado de las personas de edad,,2025-11-26 07:42:21,2025-11-26 07:42:21,31
+E55,Dr. Iván Vásquez,Finanzas,2023-08-10,27,2380,4,2380,No,Diseñador de moda,"Operario de la conservación de frutas, legumbres y verduras",,2025-11-26 07:42:21,2025-11-26 07:42:21,57
+E56,Lic. Georgina Corrales,Recursos Humanos,2013-10-22,145,2546,3,2546,Sí,Diseñador de moda,Técnico agropecuario,,2025-11-26 07:42:21,2025-11-26 07:42:21,50
+E57,Cristal Zaragoza Curiel,Diseño,2015-01-15,130,2877,1,2877,Sí,Diseñador de moda,Auxiliar de maestro,,2025-11-26 07:42:21,2025-11-26 07:42:21,39
+E58,Barbara Israel Ramírez,Ventas,2020-03-19,68,2051,4,2051,No,Vendedor,Modelador de vidrio,,2025-11-26 07:42:21,2025-11-26 07:42:21,24
+E59,Martha Francisco Javier Lerma Segura,Ventas,2012-05-23,162,1802,2,1802,No,Diseñador de moda,Oficial de las fuerzas armadas,,2025-11-26 07:42:21,2025-11-26 07:42:21,20
+E60,Claudio Padilla,Calidad,2015-08-04,123,902,4,902,Sí,Vendedor,Profesor de enseñanza secundaria,,2025-11-26 07:42:21,2025-11-26 07:42:21,55
+E61,Judith Oquendo,Finanzas,2022-07-15,40,2167,4,2167,No,Vendedor,Instalador de material aislante y de insonorización,,2025-11-26 07:42:21,2025-11-26 07:42:21,53
+E62,Guadalupe Víctor Trujillo,Ventas,2020-02-04,69,1125,3,1125,No,Vendedor,Director financiero,,2025-11-26 07:42:21,2025-11-26 07:42:21,50
+E63,Armando Aparicio Armenta,Recursos Humanos,2016-02-28,117,2083,2,2083,No,Vendedor,"Operador de máquinas de blanqueamiento, teñido y limpieza de tejidos",,2025-11-26 07:42:21,2025-11-26 07:42:21,35
+E64,Benjamín Maximiliano Espinosa,Logística,2013-02-07,153,5212,2,5212,No,Gerente de planta,Bibliotecarios,,2025-11-26 07:42:21,2025-11-26 07:42:21,25
+E65,Raquel Gustavo Quiñónez Lemus,Logística,2017-06-03,101,2349,1,2349,Sí,Supervisor,Psicólogo,,2025-11-26 07:42:21,2025-11-26 07:42:21,46
+E66,Mariana Frías Tello,Logística,2010-06-10,185,1597,4,1597,Sí,Asistente administrativo,Detective,,2025-11-26 07:42:21,2025-11-26 07:42:21,57
+E67,Modesto Raya de la Rosa,Compras,2019-05-26,78,4223,2,4223,No,Gerente de planta,Secretario jurídicos,,2025-11-26 07:42:21,2025-11-26 07:42:21,44
+E68,Cornelio Ramiro Palacios Guevara,Logística,2010-08-26,183,2392,2,2392,No,Analista de calidad,Maestro de enseñanza primaria,,2025-11-26 07:42:21,2025-11-26 07:42:21,51
+E69,Lic. Cristina de la Crúz,Producción,2010-08-09,183,1337,1,1337,No,Técnico de mantenimiento,Inspector de policía,,2025-11-26 07:42:21,2025-11-26 07:42:21,54
+E70,Karina Adame,TI,2011-02-16,177,1172,2,1172,No,Técnico de mantenimiento,Supervisor de la construcción,,2025-11-26 07:42:21,2025-11-26 07:42:21,31
+E71,Elias Adela Carrillo Ayala,Calidad,2019-06-16,77,4552,4,4552,Sí,Gerente de planta,Empleado del servicio de personal,,2025-11-26 07:42:21,2025-11-26 07:42:21,37
+E72,Uriel Sepúlveda Rosario,Producción,2024-07-31,16,1058,1,1058,No,Operario,Diseñador de interior,,2025-11-26 07:42:21,2025-11-26 07:42:21,34
+E73,Bruno Teresa Crespo,Finanzas,2013-06-02,149,1541,1,1541,No,Diseñador de moda,Operador de maquinaria agrícola y forestal móvil,,2025-11-26 07:42:21,2025-11-26 07:42:21,59
+E74,Cristobal Carmona,Calidad,2018-04-10,91,2452,2,2452,No,Diseñador de moda,Inspector medioambiental y afines,,2025-11-26 07:42:21,2025-11-26 07:42:21,36
+E75,Yeni Angulo,Logística,2016-12-30,107,2685,4,2685,No,Supervisor,Guardagujas,,2025-11-26 07:42:21,2025-11-26 07:42:21,21
+E76,Ing. Elsa de la Garza,Recursos Humanos,2024-01-26,22,1655,1,1655,No,Diseñador de moda,Perforador y sondista de pozos,,2025-11-26 07:42:21,2025-11-26 07:42:21,57
+E77,Sr(a). Aurelio Barela,Calidad,2019-08-11,75,1055,3,1055,Sí,Operario,Entrevistador de investigaciones de mercados,,2025-11-26 07:42:21,2025-11-26 07:42:21,54
+E78,Dr. Adán Zapata,TI,2012-05-14,162,2484,4,2484,No,Asistente administrativo,Profesional de nivel medio de servicios estadísticos o matemáticos,,2025-11-26 07:42:21,2025-11-26 07:42:21,51
+E79,Jorge Luis Óscar Yáñez,Compras,2024-08-03,15,1160,4,1160,No,Asistente administrativo,Agente de servicios de seguridad social,,2025-11-26 07:42:21,2025-11-26 07:42:21,53
+E80,Ofelia Malave Girón,Finanzas,2011-12-11,167,2160,2,2160,No,Analista de calidad,Pulidor de metales y afilador de herramientas,,2025-11-26 07:42:21,2025-11-26 07:42:21,35
+E81,Víctor Acuña,Diseño,2021-02-01,57,1488,4,1488,Sí,Asistente administrativo,Especialista en métodos pedagógicos,,2025-11-26 07:42:21,2025-11-26 07:42:21,21
+E82,Luz Mariano Preciado Menéndez,Recursos Humanos,2023-05-16,30,2197,1,2197,No,Analista de calidad,Agente de compras,,2025-11-26 07:42:21,2025-11-26 07:42:21,37
+E83,Nadia Vargas Soto,Ventas,2019-02-12,81,1675,4,1675,No,Diseñador de moda,Entrenador deportivo,,2025-11-26 07:42:21,2025-11-26 07:42:21,35
+E84,Sr(a). Virginia Pichardo,Logística,2012-02-02,165,1717,2,1717,No,Vendedor,Conductor de vehículos accionados a pedal o a brazo,,2025-11-26 07:42:21,2025-11-26 07:42:21,21
+E85,Abel Magdalena Henríquez Holguín,Compras,2021-11-28,48,4938,3,4938,No,Gerente de planta,Operador de máquinas para la fabricación de calzado,,2025-11-26 07:42:21,2025-11-26 07:42:21,55
+E86,Jonás Meza,Ventas,2015-08-22,123,1354,3,1354,Sí,Vendedor,Parquetero y colocador de suelos,,2025-11-26 07:42:21,2025-11-26 07:42:21,39
+E87,Martín Garay,Compras,2020-11-10,60,896,3,896,No,Técnico de mantenimiento,Empleado de servicios de apoyo a la producción,,2025-11-26 07:42:21,2025-11-26 07:42:21,33
+E88,Rodolfo Aponte,Producción,2018-02-04,93,2106,2,2106,No,Diseñador de moda,Cortador de vidrio,,2025-11-26 07:42:21,2025-11-26 07:42:21,34
+E89,Ing. Leonel Castillo,Finanzas,2012-10-31,157,1266,1,1266,No,Operario,Pulidor de vidrio,,2025-11-26 07:42:21,2025-11-26 07:42:21,38
+E90,Rodrigo Nájera,Producción,2019-11-18,72,2461,3,2461,No,Analista de calidad,Agente de administración tributaria,,2025-11-26 07:42:21,2025-11-26 07:42:21,50
+E91,Sr(a). Abel Montalvo,Producción,2018-12-27,83,1033,2,1033,Sí,Vendedor,Agrimensor,,2025-11-26 07:42:21,2025-11-26 07:42:21,24
+E92,Esteban Francisco Javier Alcántar,Logística,2012-08-28,159,1674,2,1674,No,Analista de calidad,Albañil,,2025-11-26 07:42:21,2025-11-26 07:42:21,35
+E93,Sr(a). Horacio Orozco,Logística,2016-09-01,110,1722,3,1722,No,Asistente administrativo,Techador,,2025-11-26 07:42:21,2025-11-26 07:42:21,48
+E94,Dr. Jaqueline Pedroza,Recursos Humanos,2014-08-30,135,1324,1,1324,Sí,Operario,Guardián de prisión,,2025-11-26 07:42:21,2025-11-26 07:42:21,26
+E95,Estela Leticia Robledo Guardado,Finanzas,2013-07-06,148,1265,4,1265,No,Técnico de mantenimiento,Auxiliar de maestro,,2025-11-26 07:42:21,2025-11-26 07:42:21,24
+E96,Mariana Serrano,Ventas,2020-03-08,68,2090,3,2090,No,Diseñador de moda,"Pescador, cazador, tramperos y recolector de subsistencia",,2025-11-26 07:42:21,2025-11-26 07:42:21,38
+E97,Ivonne Montero Salinas,Diseño,2022-03-20,44,2370,3,2370,No,Diseñador de moda,Gerente general,,2025-11-26 07:42:21,2025-11-26 07:42:21,27
+E98,Joaquín Aguilar,Recursos Humanos,2016-11-24,108,1622,4,1622,Sí,Supervisor,Albañil,,2025-11-26 07:42:21,2025-11-26 07:42:21,30
+E99,Alonso Benjamín Jaime Concepción,Finanzas,2016-02-09,117,2933,4,2933,Sí,Analista de calidad,Pintor y empapelador,,2025-11-26 07:42:21,2025-11-26 07:42:21,45

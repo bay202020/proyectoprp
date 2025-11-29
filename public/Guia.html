@@ -1,0 +1,179 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Guía de 5 Pasos</title>
+
+  <link rel="stylesheet" href="CSS/style.css">
+  <link rel="stylesheet" href="CSS/guiastyle.css">
+
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+
+<body>
+
+  <!-- =========================================================
+       [HEADER] Igual que en Inicio / Contacto
+       ========================================================= -->
+  <header class="main-header">
+    <div class="header-inner">
+      <a href="Inicio.html" class="brand">
+        <img src="Img/logo.png" alt="Cihuata Data-Lab" class="logo">
+      </a>
+      <nav class="main-nav">
+        <a class="header-link" href="Inicio.html">Inicio</a>
+        <a class="header-link" href="Guia.html">Guía</a>
+        <a class="header-link" href="Contacto.html">Contacto</a>
+      </nav>
+      <!-- USER MENU: icono + dropdown -->
+      <div class="header-user">
+        <div class="user-menu">
+          <!-- botón: icono circular -->
+          <button id="userBtn" class="user-btn" aria-haspopup="true" aria-expanded="false" title="Cuenta">
+            <!-- puedes usar un PNG en Img/user-icon.png o el SVG inline -->
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true" focusable="false">
+              <path d="M12 12c2.761 0 5-2.239 5-5s-2.239-5-5-5-5 2.239-5 5 2.239 5 5 5z" stroke="currentColor"
+                stroke-width="1.2" />
+              <path d="M3 21c0-3.866 3.582-7 9-7s9 3.134 9 7" stroke="currentColor" stroke-width="1.2"
+                stroke-linecap="round" />
+            </svg>
+          </button>
+
+          <!-- dropdown -->
+          <div id="userDropdown" class="user-dropdown" role="menu" aria-hidden="true">
+            <div class="user-info">
+              <div class="user-name" id="userName">Usuario</div>
+              <div class="user-email" id="userEmail"></div>
+            </div>
+            <div class="dropdown-actions">
+              <button id="logoutBtn" class="btn-logout">Cerrar sesión</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- FIN USER MENU -->
+
+    </div>
+  </header>
+
+
+
+  <!-- =========================================================
+       [MAIN] Guía del usuario para usar la página de Inicio.html
+       ========================================================= -->
+  <main class="guide-container" aria-labelledby="guide-title">
+    <!-- Encabezado de la guía -->
+    <header class="guide-header">
+      <h1 id="guide-title">Guía de 5 Pasos</h1>
+      <p class="guide-sub">Completa cada paso cuidadosamente para cargar y analizar tu archivo en Cihuata Data-Lab.</p>
+    </header>
+
+    <!-- Pasos -->
+    <section class="steps" aria-label="Pasos">
+      <!-- Paso 1 -->
+      <article class="step" aria-labelledby="p1">
+        <h2 id="p1">Paso 1 — Selecciona o arrastra tu archivo</h2>
+        <p>En <strong>Inicio</strong>, haz clic en el área “Carga de Datos” o <em>arrastra</em> un archivo <strong>CSV o
+            XLSX</strong> hacia el recuadro. Verás el nombre del archivo cuando se haya detectado.</p>
+      </article>
+
+      <!-- Paso 2 -->
+      <article class="step" aria-labelledby="p2">
+        <h2 id="p2">Paso 2 — Revisa la previsualización</h2>
+        <p>Comprueba el <strong>nombre</strong> y el <strong>tamaño</strong> del archivo en la tarjeta de
+          previsualización. Si no corresponde, elimínalo con el icono <strong>✕</strong> y vuelve a seleccionar otro.
+        </p>
+      </article>
+
+      <!-- Paso 3 -->
+      <article class="step" aria-labelledby="p3">
+        <h2 id="p3">Paso 3 — Sube el archivo y espera la barra de progreso</h2>
+        <p>Al comenzar la carga verás una <strong>barra de progreso</strong> y el <strong>porcentaje</strong>. No
+          cierres la ventana hasta que el proceso termine al 100%.</p>
+      </article>
+
+      <!-- Paso 4 -->
+      <article class="step" aria-labelledby="p4">
+        <h2 id="p4">Paso 4 — Analiza</h2>
+        <p>Cuando la carga termine, el botón <strong>“Analizar”</strong> se activará. Presiónalo para iniciar el
+          análisis de tu dataset.</p>
+      </article>
+
+            <!-- Paso 4 -->
+      <article class="step" aria-labelledby="p5">
+        <h2 id="p5">Paso 5 — Abrir Power BI y actualizar</h2>
+        <p> <ol>
+      <li>Abre <strong>Power BI Desktop</strong> en tu equipo.</li>
+      <li>Conecta la fuente de datos MySQL usando las credenciales del usuario.</li>
+      <li>Selecciona las vistas <code>v_empleados</code> y <code>vw_prp_predicciones</code>.</li>
+      <li>En la cinta superior, haz clic en <strong>Inicio &rarr; Actualizar</strong> (Refresh) para traer los datos nuevos desde la base de datos.</li>
+      
+    </ol></p>
+      </article>
+
+      <!-- Paso 6 (destacado) -->
+      <article class="step step-emphasis" aria-labelledby="p6">
+        <h2 id="p6">Paso 6 — ¿Problemas o errores?</h2>
+        <ul class="mini-checklist">
+          <li>Confirma que el formato sea <strong>CSV/XLSX</strong> y que el archivo no esté protegido.</li>
+          <li>Evita caracteres especiales en el nombre (usa letras, números y guiones bajos).</li>
+          <li>Si el archivo es muy grande, prueba con una muestra reducida para validar.</li>
+        </ul>
+        <p class="inline-reco">
+          <span class="material-icons" aria-hidden="true">info</span>
+          <strong>Recomendación:</strong>
+          si el problema persiste, <a class="cta-inline" href="Contacto.html">contáctanos aquí</a> para ayudarte.
+        </p>
+      </article>
+    </section>
+
+    <!-- Enlace inferior (opción alternativa para contactar) -->
+    <nav class="bottom-actions" aria-label="Más opciones">
+      
+    </nav>
+  </main>
+
+  <!-- =========================================================
+       [FOOTER] Copy
+       ========================================================= -->
+  <footer class="footer-bar">
+    <p class="footer-copy">Cihuata Data-Lab © 2025</p>
+  </footer>
+
+
+  <!-- =========================================================
+       [SCRIPTS] 
+       ========================================================= -->
+
+  <!-- Marca activo automáticamente (opcional) -->
+  <script>
+    (function () {
+      var path = (location.pathname.split('/').pop() || 'inicio.html').toLowerCase();
+      document.querySelectorAll('.main-nav a').forEach(function (a) {
+        var href = (a.getAttribute('href') || '').toLowerCase();
+        if (href === path) a.setAttribute('aria-current', 'page');
+      });
+    })();
+  </script>
+
+
+  <script>
+    (async () => {
+      try {
+        const r = await fetch('/session-info');
+        const d = await r.json();
+        if (!d.logged) window.location.href = '/Login.html';
+      } catch (e) {
+        window.location.href = '/Login.html';
+      }
+    })();
+  </script>
+
+  <script src="Javascript/header.js"></script>
+
+
+</body>
+
+</html>
