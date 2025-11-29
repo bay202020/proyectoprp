@@ -646,6 +646,55 @@ app.post("/api/predictions/bulk", async (req, res) => {
   }
 });
 
+// --- INICIO: endpoint para Contacto (añadir en server.js) ---
+const nodemailer = require('nodemailer'); // agregar arriba si no está
+
+// Crea el transporter usando variables de entorno (configurar en Railway)
+const smtpHost = process.env.SMTP_HOST;   // ej. smtp.sendgrid.net o smtp.gmail.com
+const smtpPort = process.env.SMTP_PORT || 587;
+const smtpUser = process.env.SMTP_USER;
+const smtpPass = process.env.SMTP_PASS;
+const toEmail = process.env.TO_EMAIL || 'cihuatadatalab@gmail.com';
+const fromEmail = process.env.FROM_EMAIL || `no-reply@${process.env.DOMAIN || 'example.com'}`;
+
+let mailerTransporter = null;
+if (smtpHost && smtpUser && smtpPass) {
+  mailerTransporter = nodemailer.createTransport({
+    host: smtpHost,
+    port: Number(smtpPort),
+    secure: Number(smtpPort) === 465,
+    auth: { user: smtpUser, pass: smtpPass }
+  });
+} else {
+  console.warn('SMTP no configurado. Set SMTP_HOST, SMTP_USER, SMTP_PASS en variables de entorno.');
+}
+
+app.post('/api/contact', async (req, res) => {
+  try {
+    const { name, email, subject, message } = req.body || {};
+    if (!message || !email) return res.status(400).json({ ok: false, error: 'Faltan campos' });
+
+    if (!mailerTransporter) {
+      return res.status(500).json({ ok: false, error: 'SMTP no configurado' });
+    }
+
+    const mailOptions = {
+      from: `${name || 'Contacto web'} <${fromEmail}>`,
+      to: toEmail,
+      subject: subject || 'Nuevo contacto desde la web',
+      text: `De: ${name || 'sin nombre'} <${email}>\n\n${message}`
+    };
+
+    await mailerTransporter.sendMail(mailOptions);
+    return res.json({ ok: true });
+  } catch (err) {
+    console.error('Error /api/contact:', err && (err.stack || err));
+    return res.status(500).json({ ok: false, error: String(err).slice(0, 200) });
+  }
+});
+// --- FIN: endpoint para Contacto ---
+
+
 // ------------------------------
 // Start
 // ------------------------------
