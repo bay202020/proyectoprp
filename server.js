@@ -1,10 +1,17 @@
 // server.js (UNIFICADO) - incluye mapeo ampliado de horas_extras y genero
 require('dotenv').config();
 process.on('uncaughtException', (err) => {
-  console.error('UNCAUGHT EXCEPTION', err && err.stack ? err.stack : err);
+  // log completo para depuración
+  console.error('UNCAUGHT EXCEPTION — se apagará el proceso. Error:');
+  console.error(err && err.stack ? err.stack : err);
+  // opcional: limpiar recursos aquí (cerrar conexiones, archivos, etc)
+  // después se sale para evitar estado inconsistente
+  process.exit(1);
 });
-process.on('unhandledRejection', (reason, p) => {
-  console.error('UNHANDLED REJECTION at', p, 'reason:', reason && (reason.stack || reason));
+process.on('unhandledRejection', (reason, promise) => {
+  console.error('UNHANDLED REJECTION at', promise, 'reason:', reason && (reason.stack || reason));
+  // si la app no puede recuperar, salir también
+  process.exit(1);
 });
 
 const express = require('express');
@@ -18,13 +25,7 @@ const fs = require('fs');
 // -----------------------------
 // CAPTURA GLOBAL DE ERRORES
 // -----------------------------
-process.on('uncaughtException', err => {
-  console.error('UNCAUGHT EXCEPTION', err);
-});
 
-process.on('unhandledRejection', err => {
-  console.error('UNHANDLED REJECTION', err);
-});
 
 const app = express();
 const PORT = process.env.PORT || 8080;
@@ -52,6 +53,45 @@ console.log("RAILWAY DB CONFIG ->", {
 });
 const pool = mysql.createPool(dbConfig);
 
+const server = app.listen(PORT, '0.0.0.0', () => {
+  console.log(`Servidor corriendo en http://0.0.0.0:${PORT} (env PORT=${process.env.PORT})`);
+});
+
+// handler para apagar limpiamente
+async function gracefulShutdown(signal) {
+  try {
+    console.log(`${signal} recibido: cerrando servidor y conexiones...`);
+    // deja de aceptar nuevas conexiones
+    server.close(async (err) => {
+      if (err) {
+        console.error('Error cerrando servidor:', err);
+        process.exit(1);
+      }
+      try {
+        if (pool) {
+          await pool.end(); // cierra pool de mysql2/promise
+          console.log('Pool MySQL cerrado.');
+        }
+      } catch (e) {
+        console.error('Error cerrando pool:', e);
+      }
+      console.log('Apagado completo.');
+      process.exit(0);
+    });
+
+    // timeout forzado por si hay conexiones colgadas
+    setTimeout(() => {
+      console.warn('Shutdown forzado por timeout');
+      process.exit(1);
+    }, 30000).unref();
+  } catch (e) {
+    console.error('Error en gracefulShutdown:', e);
+    process.exit(1);
+  }
+}
+
+process.on('SIGTERM', () => gracefulShutdown('SIGTERM'));
+process.on('SIGINT', () => gracefulShutdown('SIGINT'));
 
 // ------------------------------
 // Middleware
