@@ -78,7 +78,36 @@
         </div>
       </header>
 
-      <form id="contact-form" action="mailto:cihuatadatalab@gmail.com" method="post" enctype="text/plain">
+      <form id="contactForm" action="/api/contact" method="post">
+        <input name="name" placeholder="Nombre" required>
+        <input name="email" type="email" placeholder="Tu email" required>
+        <input name="subject" placeholder="Asunto">
+        <textarea name="message" placeholder="Mensaje" required></textarea>
+        <button type="submit">Enviar</button>
+      </form>
+
+      <script>
+        document.getElementById('contactForm').addEventListener('submit', async (e) => {
+          e.preventDefault();
+          const form = e.target;
+          const data = Object.fromEntries(new FormData(form));
+          const res = await fetch(form.action, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(data)
+          });
+          const json = await res.json();
+          if (json.ok) {
+            alert('Mensaje enviado. ¡Gracias!');
+            form.reset();
+          } else {
+            alert('Error: ' + (json.error || 'No se pudo enviar'));
+          }
+        });
+      </script>
+
+
+      <!--<form id="contact-form" action="mailto:cihuatadatalab@gmail.com" method="post" enctype="text/plain">
         <div class="row">
           <div>
             <label for="name">Nombre</label>
@@ -105,7 +134,7 @@
           <button class="btn btn-ghost" type="reset">Limpiar</button>
           <p class="hint" style="margin-left:auto">Protección anti-spam incluida</p>
         </div>
-      </form>
+      </form>-->
 
       <p class="small" style="margin-top:14px">Al enviar aceptas que tratemos tu información conforme a nuestra política
         de privacidad.</p>
