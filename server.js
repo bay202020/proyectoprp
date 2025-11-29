@@ -32,12 +32,41 @@ const pool = mysql.createPool(dbConfig);
 app.use(express.json({ limit: process.env.EXPRESS_JSON_LIMIT || '20mb' }));
 app.use(express.urlencoded({ extended: true, limit: process.env.EXPRESS_URLENCODED_LIMIT || '20mb' }));
 
+const MySQLStore = require('express-mysql-session')(session);
+
+// Opciones para el store (puedes reusar dbConfig ya definido)
+const sessionStoreOptions = {
+  host: dbConfig.host,
+  port: dbConfig.port || 3306,
+  user: dbConfig.user,
+  password: dbConfig.password,
+  database: dbConfig.database,
+  // opcionales:
+  createDatabaseTable: true,
+  schema: {
+    tableName: 'sessions',
+    columnNames: {
+      session_id: 'session_id',
+      expires: 'expires',
+      data: 'data'
+    }
+  }
+};
+const sessionStore = new MySQLStore(sessionStoreOptions);
+
 app.use(session({
+  key: 'prp_sid',
   secret: process.env.SESSION_SECRET || 'clave_segura',
+  store: sessionStore,
   resave: false,
   saveUninitialized: false,
-  cookie: { maxAge: 1000 * 60 * 60 * 2, secure: false, sameSite: 'lax' }
+  cookie: {
+    maxAge: 1000 * 60 * 60 * 2,
+    secure: process.env.NODE_ENV === 'production', // true solo si usas HTTPS
+    sameSite: 'lax'
+  }
 }));
+
 
 app.use(express.static(path.join(__dirname, 'public')));
 
