@@ -15,6 +15,17 @@ const path = require('path');
 const multer = require('multer');
 const fs = require('fs');
 
+// -----------------------------
+// CAPTURA GLOBAL DE ERRORES
+// -----------------------------
+process.on('uncaughtException', err => {
+  console.error('UNCAUGHT EXCEPTION', err);
+});
+
+process.on('unhandledRejection', err => {
+  console.error('UNHANDLED REJECTION', err);
+});
+
 const app = express();
 const PORT = process.env.PORT || 8080;
 const DEBUG = process.env.DEBUG === 'true' || false;
@@ -694,16 +705,7 @@ app.post('/api/contact', async (req, res) => {
 });
 // --- FIN: endpoint para Contacto ---
 
-// ---------------------------------------------------
-// GLOBAL ERROR HANDLERS (AGREGAR ESTO)
-// ---------------------------------------------------
-process.on('uncaughtException', err => {
-  console.error('UNCAUGHT EXCEPTION', err);
-});
 
-process.on('unhandledRejection', err => {
-  console.error('UNHANDLED REJECTION', err);
-});
 // ------------------------------
 // Start
 // ------------------------------
