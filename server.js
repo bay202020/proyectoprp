@@ -650,7 +650,3 @@ app.listen(PORT, () => {
   console.log('Health: GET /health');
 });
 
-
-app.listen(PORT, () => {
-  console.log(`Servidor corriendo en http://localhost:${PORT}`);
-});
