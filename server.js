@@ -694,7 +694,16 @@ app.post('/api/contact', async (req, res) => {
 });
 // --- FIN: endpoint para Contacto ---
 
+// ---------------------------------------------------
+// GLOBAL ERROR HANDLERS (AGREGAR ESTO)
+// ---------------------------------------------------
+process.on('uncaughtException', err => {
+  console.error('UNCAUGHT EXCEPTION', err);
+});
 
+process.on('unhandledRejection', err => {
+  console.error('UNHANDLED REJECTION', err);
+});
 // ------------------------------
 // Start
 // ------------------------------
