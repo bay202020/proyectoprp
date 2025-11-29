@@ -1,0 +1,169 @@
+/* =========================================================
+   [0] Variables locales (la imagen de fondo viene de style.css)
+   ========================================================= */
+:root{
+  --bg: #f6f7f9;         /* color auxiliar para superficies claras */
+  --card: #ffffff;
+  --text: #0f1723;
+  --muted: #6b7280;
+  --accent: #0b66ff;
+  --accent-cta: #063bc8;
+  --radius: 12px;
+  --max-width: 820px;
+  --gap: 20px;
+  --shadow: 0 6px 18px rgba(10,15,25,0.06);
+  --transition: 180ms ease;
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+}
+
+/* =========================================================
+   [1] Reset mínimo + layout (NO tocar el fondo global)
+   ========================================================= */
+*{ box-sizing: border-box; }
+html, body{ height: 100%; }
+
+/* Usamos sticky footer; NO establecemos background aquí
+   para no sobreescribir Fondo.png definido en style.css */
+body{
+  margin: 0;
+  color: var(--text);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  line-height: 1.45;
+
+  display: flex;
+  flex-direction: column;     /* sticky footer */
+  min-height: 100vh;          /* sticky footer */
+  padding: 0;
+}
+
+/* El main crece y empuja el footer hacia abajo */
+.contact-shell{
+  width: 100%;
+  max-width: var(--max-width);
+  display: grid;
+  grid-template-columns: 1fr 360px;
+  gap: var(--gap);
+  align-items: start;
+
+  margin: 24px auto;          /* respiración bajo el header y centrado */
+}
+
+/* =========================================================
+   [2] Tarjeta principal (formulario)
+   ========================================================= */
+.contact-card{
+  background: var(--card);
+  border-radius: var(--radius);
+  padding: 28px;
+  box-shadow: var(--shadow);
+}
+
+.contact-header{
+  display: flex; align-items: center; gap: 14px; margin-bottom: 18px;
+}
+.contact-title{ font-size: 18px; font-weight: 600; margin: 0; }
+.contact-sub{ color: var(--muted); font-size: 13px; margin: 0; }
+
+form{ display: flex; flex-direction: column; gap: 14px; }
+
+label{ font-size: 13px; color: var(--muted); }
+input[type="text"], input[type="email"], textarea, select{
+  width: 100%;
+  padding: 12px 14px;
+  border-radius: 10px;
+  border: 1px solid rgba(15,23,35,0.08);
+  background: transparent;
+  font-size: 14px; color: var(--text);
+  transition: box-shadow var(--transition), border-color var(--transition);
+}
+input:focus, textarea:focus, select:focus{
+  outline: none; border-color: var(--accent);
+  box-shadow: 0 6px 18px rgba(11,102,255,0.08);
+}
+
+textarea{ min-height: 140px; resize: vertical; }
+
+.row{ display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+.full{ grid-column: 1 / -1; }
+
+.hint{ font-size: 12px; color: var(--muted); }
+
+.actions{ display: flex; gap: 10px; align-items: center; margin-top: 6px; }
+.btn{
+  appearance: none; border: 0; padding: 10px 14px;
+  border-radius: 10px; font-weight: 600; cursor: pointer;
+  transition: transform var(--transition), box-shadow var(--transition);
+}
+.btn-primary{
+  background: linear-gradient(180deg, var(--accent), var(--accent-cta));
+  color: #fff; box-shadow: 0 8px 20px rgba(11,102,255,0.12);
+}
+.btn-primary:active{ transform: translateY(1px); }
+.btn-ghost{ background: transparent; border: 1px solid rgba(15,23,35,0.06); color: var(--text); }
+
+/* =========================================================
+   [3] Panel lateral con información
+   ========================================================= */
+.contact-side{
+  padding: 22px;
+  border-radius: var(--radius);
+  background: linear-gradient(180deg, rgba(255,255,255,0.9), rgba(255,255,255,0.95));
+  box-shadow: var(--shadow);
+  display: flex; flex-direction: column; gap: 12px; height: 100%;
+}
+.side-item{ display: flex; gap: 12px; align-items: flex-start; }
+.side-item p{ margin: 0; font-size: 14px; }
+.side-title{ font-weight: 600; }
+.small{ font-size: 13px; color: var(--muted); }
+
+/* =========================================================
+   [4] Header (mantener coherencia con style.css)
+   ========================================================= */
+.main-header{
+  background:#ffffff;
+  border-bottom:1px solid #e9eef6;
+  position:relative; z-index:5;
+}
+.header-inner{
+  max-width:1200px; margin:0 auto; padding:10px 20px;
+  display:flex; align-items:center; gap:16px;
+}
+.brand{ display:inline-flex; align-items:center; text-decoration:none; }
+.logo{ width:210px; height:auto; }
+.main-nav{ margin-left:auto; display:inline-flex; align-items:center; gap:24px; }
+.header-link{
+  position:relative; color:#334155; text-decoration:none; font-weight:600;
+  letter-spacing:.2px; padding:8px 26px 8px 12px; border-radius:10px;
+  transition:background .2s, color .2s, box-shadow .2s;
+}
+.header-link::after{
+  content:"arrow_forward_ios"; font-family:'Material Icons'; font-size:.9em;
+  position:absolute; right:8px; top:50%; transform:translateY(-50%); opacity:.65;
+  transition: transform .2s, opacity .2s;
+}
+.header-link::before{
+  content:""; position:absolute; left:12px; right:26px; bottom:-6px; height:1px;
+  background:currentColor; opacity:.35; transform:scaleX(.65); transform-origin:left;
+  transition:transform .2s, opacity .2s;
+}
+.header-link:hover, .header-link:focus-visible{ color:#0f172a; background:rgba(15,23,35,.04); }
+.header-link:hover::before, .header-link:focus-visible::before{ opacity:.95; transform:scaleX(1); }
+.header-link:hover::after, .header-link:focus-visible::after{ transform:translate(4px,-50%); opacity:1; }
+.header-link[aria-current="page"]{
+  color:#0f172a; background:#f1f5f9; border:1px solid rgba(15,23,35,.08);
+  box-shadow:0 2px 8px rgba(15,23,35,.06);
+}
+
+/* =========================================================
+   [5] Footer (asegura ancho y posición)
+   ========================================================= */
+.footer-bar{ width: 100%; margin-top: auto; }
+
+/* =========================================================
+   [6] Responsive
+   ========================================================= */
+@media (max-width: 880px){
+  .contact-shell{ grid-template-columns: 1fr; }
+  .contact-side{ order: 2; }
+}

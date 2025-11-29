@@ -1,0 +1,182 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Contacto — Cihuata Data-Lab</title>
+
+  <!-- [Base] Header, footer y FONDO (Fondo.png) -->
+  <link rel="stylesheet" href="CSS/style.css">
+  <!-- [Página] Estilos específicos de Contacto -->
+  <link rel="stylesheet" href="CSS/contactostyles.css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+
+<body>
+  <!-- =========================================================
+       [HEADER] Logo + navegación (igual en todas las páginas)
+       ========================================================= -->
+  <header class="main-header">
+    <div class="header-inner">
+      <a href="Inicio.html" class="brand">
+        <img src="Img/logo.png" alt="Cihuata Data-Lab" class="logo">
+      </a>
+      <nav class="main-nav">
+        <!-- Usa SOLO la clase header-link (coherente con style.css) -->
+        <a class="header-link" href="Inicio.html">Inicio</a>
+        <a class="header-link" href="Guia.html">Guía</a>
+        <a class="header-link" href="Contacto.html">Contacto</a>
+      </nav>
+
+      <!-- USER MENU: icono + dropdown -->
+      <div class="header-user">
+        <div class="user-menu">
+          <!-- botón: icono circular -->
+          <button id="userBtn" class="user-btn" aria-haspopup="true" aria-expanded="false" title="Cuenta">
+            <!-- puedes usar un PNG en Img/user-icon.png o el SVG inline -->
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true" focusable="false">
+              <path d="M12 12c2.761 0 5-2.239 5-5s-2.239-5-5-5-5 2.239-5 5 2.239 5 5 5z" stroke="currentColor"
+                stroke-width="1.2" />
+              <path d="M3 21c0-3.866 3.582-7 9-7s9 3.134 9 7" stroke="currentColor" stroke-width="1.2"
+                stroke-linecap="round" />
+            </svg>
+          </button>
+
+          <!-- dropdown -->
+          <div id="userDropdown" class="user-dropdown" role="menu" aria-hidden="true">
+            <div class="user-info">
+              <div class="user-name" id="userName">Usuario</div>
+              <div class="user-email" id="userEmail"></div>
+            </div>
+            <div class="dropdown-actions">
+              <button id="logoutBtn" class="btn-logout">Cerrar sesión</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- FIN USER MENU -->
+
+    </div>
+  </header>
+
+
+  <!-- =========================================================
+       [MAIN] Disposición de Contacto (formulario + info lateral)
+       ========================================================= -->
+  <main class="contact-shell" role="main">
+    <!-- ---------- Tarjeta con formulario ---------- -->
+    <section class="contact-card" aria-labelledby="contact-title">
+      <header class="contact-header">
+        <div
+          style="width:46px;height:46px;border-radius:10px;background:linear-gradient(180deg,var(--accent),var(--accent-cta));display:flex;align-items:center;justify-content:center;color:#fff;font-weight:700">
+          CDL</div>
+        <div>
+          <h1 id="contact-title" class="contact-title">Contáctanos</h1>
+          <p class="contact-sub">Escríbenos con cualquier duda o solicitud. Te responderemos en menos de 48 horas.</p>
+        </div>
+      </header>
+
+      <form id="contact-form" action="mailto:cihuatadatalab@gmail.com" method="post" enctype="text/plain">
+        <div class="row">
+          <div>
+            <label for="name">Nombre</label>
+            <input id="name" name="name" type="text" placeholder="Tu nombre" required />
+          </div>
+          <div>
+            <label for="email">Correo</label>
+            <input id="email" name="email" type="email" placeholder="tu@ejemplo.com" required />
+          </div>
+        </div>
+
+        <div>
+          <label for="subject">Asunto</label>
+          <input id="subject" name="subject" type="text" placeholder="Motivo del mensaje" />
+        </div>
+
+        <div class="full">
+          <label for="message">Mensaje</label>
+          <textarea id="message" name="message" placeholder="Cuéntanos más..." required></textarea>
+        </div>
+
+        <div class="actions">
+          <button class="btn btn-primary" type="submit">Enviar mensaje</button>
+          <button class="btn btn-ghost" type="reset">Limpiar</button>
+          <p class="hint" style="margin-left:auto">Protección anti-spam incluida</p>
+        </div>
+      </form>
+
+      <p class="small" style="margin-top:14px">Al enviar aceptas que tratemos tu información conforme a nuestra política
+        de privacidad.</p>
+    </section>
+
+    <!-- ---------- Panel lateral con información ---------- -->
+    <aside class="contact-side" aria-labelledby="info-title">
+      <div>
+        <h3 id="info-title" class="side-title">Información</h3>
+        <p class="small"></p>
+      </div>
+
+      <div class="side-item">
+        <div
+          style="min-width:36px;min-height:36px;border-radius:8px;background:rgba(11,102,255,0.08);display:flex;align-items:center;justify-content:center;font-weight:600;color:var(--accent)">
+          📧</div>
+        <div>
+          <p style="margin:0">Tomar en cuenta:</p>
+          <p class="small">Tiempo de respuesta: 24–48 horas</p>
+        </div>
+      </div>
+
+      <div class="side-item">
+        <div
+          style="min-width:36px;min-height:36px;border-radius:8px;background:rgba(15,23,35,0.04);display:flex;align-items:center;justify-content:center;font-weight:600;color:var(--muted)">
+          📍</div>
+        <div>
+          <p style="margin:0">Horario de atención:</p>
+          <p class="small">Lun - Vie, 9:00 - 18:00</p>
+        </div>
+      </div>
+    </aside>
+  </main>
+
+  <!-- =========================================================
+       [FOOTER] Copy del sitio
+       ========================================================= -->
+  <footer class="footer-bar">
+    <p class="footer-copy">Cihuata Data-Lab © 2025</p>
+  </footer>
+
+  <!-- =========================================================
+       [SCRIPTS] Marcado de enlace activo + demo envío
+       ========================================================= -->
+  <script>
+    (function () {
+      var path = (location.pathname.split('/').pop() || 'Inicio.html').toLowerCase();
+      document.querySelectorAll('.main-nav a').forEach(function (a) {
+        var href = (a.getAttribute('href') || '').toLowerCase();
+        if (href === path) a.setAttribute('aria-current', 'page');
+      });
+    })();
+  </script>
+
+
+  <script>
+    (async () => {
+      try {
+        const r = await fetch('/session-info');
+        const d = await r.json();
+        if (!d.logged) window.location.href = '/Login.html';
+      } catch (e) {
+        window.location.href = '/Login.html';
+      }
+    })();
+  </script>
+
+
+  <script src="Javascript/header.js"></script>
+
+
+
+</body>
+
+</html>

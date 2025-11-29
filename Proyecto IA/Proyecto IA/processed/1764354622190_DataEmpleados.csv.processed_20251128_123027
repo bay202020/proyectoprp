@@ -1,0 +1,101 @@
+employee_id,nombre,departamento,fecha_ingreso,antiguedad_meses,salario,satisfaccion,ingresos_mensuales,horas_extras,puesto,rol_del_puesto,genero,otros,creado_at,actualizado_at,edad
+E100,Marco Antonio Enrique Jiménez,Calidad,2015-06-30,125,1551,4,1551,0,Supervisor,Profesional de nivel medio del derecho y servicios legales,Masculino,,2025-11-26 17:06:01,2025-11-26 17:06:01,37
+E101,Lorena Herrera Ruelas,Compras,2014-11-27,132,730,4,730,0,Operario,Profesional de la publicidad y la comercialización,Masculino,,2025-11-26 17:06:01,2025-11-26 17:06:01,25
+E102,Sr(a). Lucas Negrón,TI,2016-03-28,116,2419,3,2419,28,Diseñador de moda,Asistente de venta,Masculino,,2025-11-26 17:06:01,2025-11-26 17:06:01,57
+E103,Mtro. Verónica Benavides,Recursos Humanos,2012-04-17,163,920,1,920,0,Técnico de mantenimiento,Peluqueros,Masculino,,2025-11-26 17:06:01,2025-11-26 17:06:01,41
+E104,Daniel Jerónimo Miranda Gamboa,TI,2018-06-28,89,1898,2,1898,0,Vendedor,Planchador manuales,Femenino,,2025-11-26 17:06:01,2025-11-26 17:06:01,27
+E105,Reina Marisol Parra Mota,Finanzas,2016-06-28,113,1593,3,1593,0,Supervisor,Agente de compras,Masculino,,2025-11-26 17:06:01,2025-11-26 17:06:01,34
+E106,Esteban Ramón,Diseño,2014-09-13,134,1079,4,1079,16,Técnico de mantenimiento,Operador de máquinas de movimiento de tierras,Masculino,,2025-11-26 17:06:01,2025-11-26 17:06:01,42
+E107,Hermelinda Briseño Verduzco,Ventas,2022-06-29,41,1352,1,1352,0,Asistente administrativo,Supervisor en ingeniería de minas,Femenino,,2025-11-26 17:06:01,2025-11-26 17:06:01,60
+E108,Olga Barajas Malave,Finanzas,2011-06-27,173,4643,2,4643,0,Gerente de planta,Mecánico y reparador de máquinas agrícolas e industriales,Femenino,,2025-11-26 17:06:01,2025-11-26 17:06:01,37
+E109,Micaela Alberto Negrón,Ventas,2022-08-04,39,1785,2,1785,0,Analista de calidad,Patronista y cortador de tela,Femenino,,2025-11-26 17:06:01,2025-11-26 17:06:01,35
+E110,Felipe Riojas,Calidad,2012-06-17,161,986,4,986,0,Vendedor,Director financiero,Masculino,,2025-11-26 17:06:01,2025-11-26 17:06:01,23
+E111,Felipe Florencia Medina Tijerina,TI,2021-11-13,48,2020,1,2020,18,Asistente administrativo,Telefonista,Masculino,,2025-11-26 17:06:01,2025-11-26 17:06:01,49
+E112,Gerónimo Espartaco Treviño,Compras,2020-03-05,68,2390,2,2390,0,Analista de calidad,Mecánico y reparador de máquinas agrícolas e industriales,Masculino,,2025-11-26 17:06:01,2025-11-26 17:06:01,30
+E113,Humberto Esparta Sierra del Río,Compras,2024-05-01,18,2780,1,2780,0,Supervisor,Moldeador y machero,Masculino,,2025-11-26 17:06:01,2025-11-26 17:06:01,39
+E114,Dr. Blanca Alejandro,Calidad,2012-07-05,160,5001,4,5001,6,Gerente de planta,Director de publicidad y relaciones públicas,Femenino,,2025-11-26 17:06:01,2025-11-26 17:06:01,21
+E115,Lic. Homero Lozano,Ventas,2012-10-27,157,3057,2,3057,28,Supervisor,Trabajador comunitario de la salud,Femenino,,2025-11-26 17:06:01,2025-11-26 17:06:01,54
+E116,Elvira Robledo,Producción,2019-10-29,73,2317,2,2317,22,Analista de calidad,Codificador de datos,Femenino,,2025-11-26 17:06:01,2025-11-26 17:06:01,43
+E117,Luis Miguel Violeta Rocha,Calidad,2024-02-26,21,1514,2,1514,0,Diseñador de moda,Recepcionista de hoteles,Masculino,,2025-11-26 17:06:01,2025-11-26 17:06:01,24
+E118,Andrés Octavio Estrada Ávila,Logística,2014-10-22,133,2870,2,2870,0,Analista de calidad,Secretario médicos,Femenino,,2025-11-26 17:06:01,2025-11-26 17:06:01,51
+E119,Ing. Anabel Cepeda,Producción,2017-12-12,95,1698,4,1698,7,Supervisor,Mecánico y reparador de motores de avión,Femenino,,2025-11-26 17:06:01,2025-11-26 17:06:01,47
+E120,Sr(a). Linda Sanches,Ventas,2014-04-19,139,3447,1,3447,30,Gerente de planta,Diseñador multimedia,Femenino,,2025-11-26 17:06:01,2025-11-26 17:06:01,35
+E121,Dr. Guadalupe Ayala,Ventas,2012-03-13,164,2454,2,2454,0,Vendedor,Agente de seguros,Masculino,,2025-11-26 17:06:01,2025-11-26 17:06:01,55
+E122,Angélica Luis Manuel Hernández Treviño,Recursos Humanos,2014-10-18,133,1794,4,1794,25,Asistente administrativo,Operador de máquinas para fabricar productos de material plástico,Masculino,,2025-11-26 17:06:01,2025-11-26 17:06:01,50
+E123,Mariana Ruby Briseño,Compras,2024-11-05,12,2366,1,2366,4,Analista de calidad,Vendedor ambulantes de productos comestibles,Masculino,,2025-11-26 17:06:01,2025-11-26 17:06:01,55
+E124,Jos Amalia Alfaro,Diseño,2023-02-07,33,3234,1,3234,0,Gerente de planta,Profesional religioso,Masculino,,2025-11-26 17:06:01,2025-11-26 17:06:01,23
+E125,Miriam Ángel Aguilar,Logística,2019-01-21,82,2882,3,2882,6,Supervisor,Focumentalista,Masculino,,2025-11-26 17:06:01,2025-11-26 17:06:01,35
+E126,Emiliano Claudio Badillo,TI,2015-05-10,126,1918,1,1918,0,Analista de calidad,Agrónomo,Masculino,,2025-11-26 17:06:01,2025-11-26 17:06:01,40
+E127,Eva Almaraz Nevárez,Diseño,2022-08-18,39,1169,3,1169,0,Operario,Decorador de interior,Masculino,,2025-11-26 17:06:01,2025-11-26 17:06:01,59
+E128,Marisela Esther Lebrón,Compras,2016-05-23,114,2000,1,2000,0,Supervisor,Trabajador social de nivel medio,Femenino,,2025-11-26 17:06:01,2025-11-26 17:06:01,43
+E129,Cristobal Esther Carrero,Ventas,2013-01-05,154,2858,3,2858,19,Analista de calidad,Vendedor de quioscos y de puestos de mercado,Masculino,,2025-11-26 17:06:01,2025-11-26 17:06:01,26
+E130,Carlota Hernandes Alfaro,Calidad,2015-12-03,119,2907,4,2907,0,Diseñador de moda,Impresor,Femenino,,2025-11-26 17:06:01,2025-11-26 17:06:01,60
+E131,Miguel Ángel Maximiliano Saiz,Logística,2017-06-25,101,1590,1,1590,0,Analista de calidad,Lavador de ventanas,Femenino,,2025-11-26 17:06:01,2025-11-26 17:06:01,20
+E132,Elena Alonso Mesa Alcántar,Producción,2022-03-28,44,1654,3,1654,9,Supervisor,Técnico en química industrial,Femenino,,2025-11-26 17:06:01,2025-11-26 17:06:01,29
+E133,José Carlos Camilo Nájera Suárez,Logística,2014-09-17,134,3163,2,3163,0,Gerente de planta,Analista financiero,Masculino,,2025-11-26 17:06:01,2025-11-26 17:06:01,42
+E134,Mtro. Gerónimo Romero,Ventas,2019-04-01,79,1832,3,1832,0,Diseñador de moda,Operador de plantas y máquinas de productos químicos,Femenino,,2025-11-26 17:06:01,2025-11-26 17:06:01,31
+E135,Carmen Jaime,TI,2010-11-14,180,810,3,810,0,Técnico de mantenimiento,Lavandero,Masculino,,2025-11-26 17:06:01,2025-11-26 17:06:01,44
+E136,Pamela Mayte Linares,TI,2024-10-20,13,1956,4,1956,18,Diseñador de moda,Periodista,Femenino,,2025-11-26 17:06:01,2025-11-26 17:06:01,21
+E137,Araceli Arellano,TI,2015-11-10,120,3113,3,3113,0,Gerente de planta,Trabajador comunitario de la salud,Femenino,,2025-11-26 17:06:01,2025-11-26 17:06:01,27
+E138,Lic. Nadia Chacón,Producción,2012-08-05,159,2041,2,2041,0,Asistente administrativo,Operador de máquinas para elaborar alimentos y productos afines,Masculino,,2025-11-26 17:06:01,2025-11-26 17:06:01,52
+E139,Dr. Aurora Romo,Compras,2024-11-24,12,4766,3,4766,20,Gerente de planta,Dentista,Femenino,,2025-11-26 17:06:01,2025-11-26 17:06:01,24
+E140,Luis Francisca Covarrubias Granados,Diseño,2016-08-19,111,1468,3,1468,0,Asistente administrativo,Asesor de inversiones,Masculino,,2025-11-26 17:06:01,2025-11-26 17:06:01,45
+E141,Dr. Carolina Terrazas,TI,2016-10-25,109,1922,4,1922,0,Asistente administrativo,Cuidador de niños,Femenino,,2025-11-26 17:06:01,2025-11-26 17:06:01,20
+E142,Lic. Amalia Briseño,TI,2021-06-19,53,1705,1,1705,0,Vendedor,Pulidor de vidrio,Masculino,,2025-11-26 17:06:01,2025-11-26 17:06:01,33
+E143,Carlota Jimínez Toro,Calidad,2015-01-15,130,2877,4,2877,31,Diseñador de moda,Ensamblador de maquinaria mecánica,Masculino,,2025-11-26 17:06:01,2025-11-26 17:06:01,39
+E144,Emilia Serrano,Calidad,2014-05-12,138,2089,4,2089,1,Asistente administrativo,Agente de administración tributaria,Femenino,,2025-11-26 17:06:01,2025-11-26 17:06:01,56
+E145,Dr. Manuel Velásquez,Finanzas,2020-06-02,65,1860,3,1860,9,Diseñador de moda,Director de servicios de educación,Masculino,,2025-11-26 17:06:01,2025-11-26 17:06:01,53
+E146,Mario Conchita Muñoz,Finanzas,2019-07-28,76,2054,4,2054,0,Vendedor,Director de servicios de cuidados infantiles,Femenino,,2025-11-26 17:06:01,2025-11-26 17:06:01,52
+E147,Sr(a). Cristal Aparicio,Calidad,2024-04-20,19,3039,3,3039,0,Analista de calidad,Ingeniero electrónico,Femenino,,2025-11-26 17:06:01,2025-11-26 17:06:01,35
+E148,Rafaél Salvador Salgado Lucero,Ventas,2017-03-04,104,2056,1,2056,10,Diseñador de moda,Biólogo,Masculino,,2025-11-26 17:06:01,2025-11-26 17:06:01,41
+E149,Lic. Ricardo Puga,Producción,2022-03-04,44,1634,4,1634,0,Asistente administrativo,Vendedor de quioscos y de puestos de mercado,Masculino,,2025-11-26 17:06:01,2025-11-26 17:06:01,41
+E150,Alicia Muro,Ventas,2016-09-12,110,812,4,812,0,Vendedor,Economista,Femenino,,2025-11-26 17:06:01,2025-11-26 17:06:01,42
+E151,Cornelio Amanda Ontiveros,Diseño,2020-11-22,60,2058,4,2058,0,Diseñador de moda,Organizador de conferencias y eventos,Femenino,,2025-11-26 17:06:01,2025-11-26 17:06:01,47
+E152,Benjamín Ybarra Rodríquez,Finanzas,2010-08-09,183,1337,2,1337,0,Técnico de mantenimiento,Técnico en seguridad aeronáutica,Masculino,,2025-11-26 17:06:01,2025-11-26 17:06:01,54
+E153,Ruby de la O,Recursos Humanos,2017-05-05,102,966,4,966,0,Operario,Bailarín,Femenino,,2025-11-26 17:06:01,2025-11-26 17:06:01,44
+E154,Oswaldo Dolores Rodrígez Saavedra,Calidad,2010-06-08,185,1667,1,1667,0,Analista de calidad,Operador de máquinas de movimiento de tierras,Masculino,,2025-11-26 17:06:01,2025-11-26 17:06:01,50
+E155,Lic. Sergio Montenegro,Ventas,2010-06-16,185,953,4,953,0,Operario,Tronzador,Masculino,,2025-11-26 17:06:01,2025-11-26 17:06:01,32
+E156,Alejandro Micaela Brito,Calidad,2013-10-06,145,3070,1,3070,20,Analista de calidad,Limpiador y asistente doméstico,Masculino,,2025-11-26 17:06:01,2025-11-26 17:06:01,43
+E157,Humberto Ruelas Ojeda,Ventas,2018-11-24,84,2679,1,2679,0,Analista de calidad,Cuidador de niños,Masculino,,2025-11-26 17:06:01,2025-11-26 17:06:01,44
+E158,Abigail Mejía,TI,2012-09-18,158,2901,1,2901,0,Analista de calidad,Abogado,Masculino,,2025-11-26 17:06:01,2025-11-26 17:06:01,58
+E159,Aurora Maximiliano Benavides,Diseño,2020-12-29,59,3051,4,3051,0,Gerente de planta,Ecónomo y mayordomos domésticos,Femenino,,2025-11-26 17:06:01,2025-11-26 17:06:01,46
+E160,Lic. Catalina Orta,Recursos Humanos,2023-10-25,25,1234,3,1234,0,Técnico de mantenimiento,Representante comercial,Femenino,,2025-11-26 17:06:01,2025-11-26 17:06:01,37
+E161,Dr. Margarita Ayala,TI,2020-02-10,69,1677,1,1677,0,Diseñador de moda,Alfarero,Femenino,,2025-11-26 17:06:01,2025-11-26 17:06:01,37
+E162,Cecilia Lourdes Varela,Recursos Humanos,2020-12-08,59,1465,1,1465,0,Vendedor,Limpiador y asistente doméstico,Femenino,,2025-11-26 17:06:01,2025-11-26 17:06:01,31
+E163,María Elena Cadena Vega,Finanzas,2019-02-12,81,1675,4,1675,0,Diseñador de moda,Operador de maquinaria agrícola y forestal móvil,Masculino,,2025-11-26 17:06:01,2025-11-26 17:06:01,35
+E164,Ramón Jesús Robles,Finanzas,2014-12-21,131,795,3,795,0,Operario,Cristalero,Masculino,,2025-11-26 17:06:01,2025-11-26 17:06:01,38
+E165,Patricia Ballesteros Sánchez,Calidad,2017-06-02,101,2327,2,2327,0,Asistente administrativo,Peón forestales,Femenino,,2025-11-26 17:06:01,2025-11-26 17:06:01,55
+E166,Elsa Zoé Caballero,Compras,2014-02-25,141,3489,3,3489,0,Gerente de planta,Gerente de comercios al por mayor y al por menor,Femenino,,2025-11-26 17:06:01,2025-11-26 17:06:01,54
+E167,Sr(a). Frida Juárez,Recursos Humanos,2015-02-07,129,1897,1,1897,0,Supervisor,Especialista en ciencias políticas,Femenino,,2025-11-26 17:06:01,2025-11-26 17:06:01,38
+E168,Perla Esperanza Chávez,Finanzas,2012-10-31,157,1266,4,1266,19,Operario,Grabador de datos,Femenino,,2025-11-26 17:06:01,2025-11-26 17:06:01,38
+E169,Esmeralda Nadia Díaz,Calidad,2011-02-25,177,1497,1,1497,32,Vendedor,Recolector de basura y material reciclable,Femenino,,2025-11-26 17:06:01,2025-11-26 17:06:01,31
+E170,Sr(a). Flavio Guardado,Ventas,2016-10-25,109,852,4,852,0,Técnico de mantenimiento,Herramentista,Masculino,,2025-11-26 17:06:01,2025-11-26 17:06:01,56
+E171,Maximiliano Santiago Ruiz,Ventas,2023-03-15,32,1706,2,1706,7,Vendedor,Técnico en química industrial,Femenino,,2025-11-26 17:06:01,2025-11-26 17:06:01,39
+E172,María Sevilla Velázquez,Finanzas,2013-07-10,148,2852,3,2852,0,Analista de calidad,Peón de explotaciones agrícolas,Masculino,,2025-11-26 17:06:01,2025-11-26 17:06:01,25
+E173,Lourdes Silvano Villa Sandoval,Ventas,2016-05-05,114,937,4,937,17,Operario,Técnico en ingeniería mecánica,Femenino,,2025-11-26 17:06:01,2025-11-26 17:06:01,38
+E174,Mtro. Diana Galván,Recursos Humanos,2024-07-11,16,2615,3,2615,11,Supervisor,Secretario médicos,Femenino,,2025-11-26 17:06:01,2025-11-26 17:06:01,34
+E175,Iván Espinal Segura,Calidad,2016-10-27,109,1054,1,1054,0,Vendedor,Paisajista,Femenino,,2025-11-26 17:06:01,2025-11-26 17:06:01,49
+E176,José Eduardo Tomás Delgadillo,Producción,2023-07-17,28,2304,3,2304,0,Asistente administrativo,Inspector de la salud laboral,Masculino,,2025-11-26 17:06:01,2025-11-26 17:06:01,40
+E177,Mario Alemán,Finanzas,2021-08-22,51,879,1,879,0,Operario,Focumentalista,Femenino,,2025-11-26 17:06:01,2025-11-26 17:06:01,50
+E178,Caridad Carmen Salcedo Marroquín,Finanzas,2017-06-23,101,1512,3,1512,0,Vendedor,Profesional del trabajo social,Masculino,,2025-11-26 17:06:01,2025-11-26 17:06:01,46
+E179,Ing. Carlota Porras,Compras,2010-10-28,181,2466,1,2466,26,Asistente administrativo,Gerente de comercios al por mayor y al por menor,Femenino,,2025-11-26 17:06:01,2025-11-26 17:06:01,55
+E180,Silvano Segura Sevilla,Ventas,2014-03-17,140,1646,3,1646,0,Vendedor,Vendedor ambulantes de productos comestibles,Femenino,,2025-11-26 17:06:01,2025-11-26 17:06:01,23
+E181,Espartaco Jacinto Vásquez,Producción,2020-11-14,60,994,4,994,0,Técnico de mantenimiento,Planchador manuales,Masculino,,2025-11-26 17:06:01,2025-11-26 17:06:01,48
+E182,Micaela Alta  Gracia Domínguez,Compras,2020-05-08,66,1960,3,1960,0,Supervisor,Operador de grúas y aparatos elevadores,Masculino,,2025-11-26 17:06:01,2025-11-26 17:06:01,27
+E183,Marisela Darío Barajas,Compras,2015-06-20,125,1788,2,1788,0,Asistente administrativo,Operador de máquinas para la fabricación de calzado,Masculino,,2025-11-26 17:06:01,2025-11-26 17:06:01,50
+E184,Ing. José Emilio Martínez,Recursos Humanos,2017-08-16,99,2065,4,2065,0,Supervisor,"Operador de máquinas de blanqueamiento, teñido y limpieza de tejidos",Femenino,,2025-11-26 17:06:01,2025-11-26 17:06:01,46
+E185,José Rubén Carrero Toro,Ventas,2020-11-11,60,1157,2,1157,0,Técnico de mantenimiento,Peletero,Femenino,,2025-11-26 17:06:01,2025-11-26 17:06:01,54
+E186,Celia Jacobo Franco Cortez,Logística,2010-12-24,179,1278,2,1278,0,Asistente administrativo,Zoólogo,Femenino,,2025-11-26 17:06:01,2025-11-26 17:06:01,46
+E187,Ana Leonel Sáenz Rosales,Finanzas,2021-04-07,55,875,1,875,0,Vendedor,Repartidor,Femenino,,2025-11-26 17:06:01,2025-11-26 17:06:01,28
+E188,Estela Noriega Noriega,Recursos Humanos,2019-03-13,80,831,3,831,0,Vendedor,Asistente farmacéutico,Masculino,,2025-11-26 17:06:01,2025-11-26 17:06:01,29
+E189,Angélica Velásquez Benavides,Finanzas,2017-05-15,102,2130,1,2130,0,Asistente administrativo,Cocinero de comidas rápidas,Femenino,,2025-11-26 17:06:01,2025-11-26 17:06:01,25
+E190,Juan Cervantes,Finanzas,2016-06-12,113,1980,2,1980,7,Supervisor,Técnico en ciencias físicas y químicas,Masculino,,2025-11-26 17:06:01,2025-11-26 17:06:01,60
+E191,Elsa Gallardo,Ventas,2017-04-11,103,1559,4,1559,0,Analista de calidad,Profesional de partería,Femenino,,2025-11-26 17:06:01,2025-11-26 17:06:01,22
+E192,Ana Luisa Yolanda Soliz Barrios,Ventas,2011-10-09,169,874,4,874,10,Técnico de mantenimiento,Dinamitero,Femenino,,2025-11-26 17:06:01,2025-11-26 17:06:01,31
+E193,Camila Acuña Pelayo,Diseño,2024-12-15,11,2441,1,2441,0,Analista de calidad,Director de industrias manufactureras,Femenino,,2025-11-26 17:06:01,2025-11-26 17:06:01,36
+E194,Cristina Manuel Salcido,Recursos Humanos,2016-09-16,110,1507,2,1507,0,Vendedor,Operador de máquinas para fabricar productos de papel,Femenino,,2025-11-26 17:06:01,2025-11-26 17:06:01,57
+E195,Cecilia Piña,Recursos Humanos,2015-04-28,127,1789,1,1789,0,Asistente administrativo,Tenedor de libros,Femenino,,2025-11-26 17:06:01,2025-11-26 17:06:01,26
+E196,Federico Lira Cepeda,Recursos Humanos,2022-09-11,38,1362,2,1362,0,Asistente administrativo,Filósofo,Masculino,,2025-11-26 17:06:01,2025-11-26 17:06:01,20
+E197,Marcos María José Montenegro,Producción,2014-04-07,139,3897,3,3897,0,Gerente de planta,Director de servicios de educación,Masculino,,2025-11-26 17:06:01,2025-11-26 17:06:01,60
+E198,Porfirio María del Carmen Brito,Logística,2018-03-08,92,868,2,868,0,Vendedor,Personas que realizan trabajos varios,Masculino,,2025-11-26 17:06:01,2025-11-26 17:06:01,57
+E199,Estefanía Clara Macías,Finanzas,2018-03-17,92,1770,3,1770,0,Diseñador de moda,"Operario de la conservación de frutas, legumbres y verduras",Femenino,,2025-11-26 17:06:01,2025-11-26 17:06:01,54
