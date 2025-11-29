@@ -53,9 +53,6 @@ console.log("RAILWAY DB CONFIG ->", {
 });
 const pool = mysql.createPool(dbConfig);
 
-const server = app.listen(PORT, '0.0.0.0', () => {
-  console.log(`Servidor corriendo en http://0.0.0.0:${PORT} (env PORT=${process.env.PORT})`);
-});
 
 // handler para apagar limpiamente
 async function gracefulShutdown(signal) {
