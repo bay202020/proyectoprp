@@ -8,10 +8,10 @@ import pymysql   # pip install pymysql
 from datetime import datetime
 
 # --- CONFIGURA ESTO según tu entorno ---
-DB_HOST = os.getenv("DB_HOST", "127.0.0.1")
+DB_HOST = os.getenv("DB_HOST", "interchange.proxy.rlwy.net")
 DB_USER = os.getenv("DB_USER", "root")
-DB_PASS = os.getenv("DB_PASS", "Cihuatadatalab-1")
-DB_NAME = os.getenv("DB_NAME", "mi_app")
+DB_PASS = os.getenv("DB_PASS", "huRlZiEFHPKlhhkJnwtOBtDIBfYzOCNY")
+DB_NAME = os.getenv("DB_NAME", "railway")
 # Si quieres comprobar por archivo: pon el nombre EXACTO del archivo procesado
 PROCESSED_FILENAME = None  # ejemplo: "1764052539549_Empleadosnuevos.csv.processed_20251125_003550"
 # O deja None y hará un resumen global del último bloque insertado

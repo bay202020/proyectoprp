@@ -16,10 +16,10 @@ const DEBUG = process.env.DEBUG === 'true' || false;
 // DB pool
 // ------------------------------
 const dbConfig = {
-  host: process.env.DB_HOST || 'localhost',
+  host: process.env.DB_HOST || 'interchange.proxy.rlwy.net',
   user: process.env.DB_USER || 'root',
-  password: process.env.DB_PASS || 'Cihuatadatalab-1',
-  database: process.env.DB_NAME || 'mi_app',
+  password: process.env.DB_PASS || 'huRlZiEFHPKlhhkJnwtOBtDIBfYzOCNY',
+  database: process.env.DB_NAME || 'railway',
   waitForConnections: true,
   connectionLimit: parseInt(process.env.DB_CONN_LIMIT || "10", 10),
   queueLimit: 0

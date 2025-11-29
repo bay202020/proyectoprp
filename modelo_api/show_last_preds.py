@@ -5,10 +5,10 @@ import pymysql  # pip install pymysql
 from datetime import datetime
 
 # config: puedes leer de .env si quieres
-DB_HOST = os.environ.get("DB_HOST", "localhost")
+DB_HOST = os.environ.get("DB_HOST", "interchange.proxy.rlwy.net")
 DB_USER = os.environ.get("DB_USER", "root")
-DB_PASS = os.environ.get("DB_PASS", "Cihuatadatalab-1")
-DB_NAME = os.environ.get("DB_NAME", "mi_app")
+DB_PASS = os.environ.get("DB_PASS", "huRlZiEFHPKlhhkJnwtOBtDIBfYzOCNY")
+DB_NAME = os.environ.get("DB_NAME", "railway")
 DB_PORT = int(os.environ.get("DB_PORT", 3306))
 
 LIMIT = 20
