@@ -17,10 +17,12 @@ const DEBUG = process.env.DEBUG === 'true' || false;
 // DB pool
 // ------------------------------
 const dbConfig = {
-  host: process.env.DB_HOST || 'interchange.proxy.rlwy.net',
-  user: process.env.DB_USER || 'root',
-  password: process.env.DB_PASS || 'huRlZiEFHPKlhhkJnwtOBtDIBfYzOCNY',
-  database: process.env.DB_NAME || 'railway',
+  host: process.env.DB_HOST,
+  user: process.env.DB_USER,
+  password: process.env.DB_PASS,
+  database: process.env.DB_NAME,
+  port: process.env.DB_PORT,
+
   waitForConnections: true,
   connectionLimit: parseInt(process.env.DB_CONN_LIMIT || "10", 10),
   queueLimit: 0
@@ -106,7 +108,7 @@ function sanitizeIncomingValue(v) {
   if (v === null || v === undefined) return null;
   if (typeof v === 'string') {
     const s = v.trim();
-    if (s === "" || ["nan","none","null","n/a","vacio-nada"].includes(s.toLowerCase())) return null;
+    if (s === "" || ["nan", "none", "null", "n/a", "vacio-nada"].includes(s.toLowerCase())) return null;
     return s;
   }
   if (typeof v === 'number') {
@@ -119,7 +121,7 @@ function sanitizeIncomingValue(v) {
 // Normalize + validate one employee object from client
 function normalizeEmployee(raw) {
   const emp = {};
-  let others = (raw && raw.otros && typeof raw.otros === 'object') ? {...raw.otros} : {};
+  let others = (raw && raw.otros && typeof raw.otros === 'object') ? { ...raw.otros } : {};
   const autofilled = [];
 
   function setTextField(key, candidates) {
@@ -128,7 +130,7 @@ function normalizeEmployee(raw) {
       if (raw && raw[c] !== undefined) { v = raw[c]; break; }
       // try normalized keys
       if (raw) {
-        const found = Object.keys(raw).find(k => String(k).toLowerCase().replace(/\s+/g,'_') === c);
+        const found = Object.keys(raw).find(k => String(k).toLowerCase().replace(/\s+/g, '_') === c);
         if (found) { v = raw[found]; break; }
       }
     }
@@ -144,7 +146,7 @@ function normalizeEmployee(raw) {
     for (const c of candidates) {
       if (raw && raw[c] !== undefined) { v = raw[c]; break; }
       if (raw) {
-        const found = Object.keys(raw).find(k => String(k).toLowerCase().replace(/\s+/g,'_') === c);
+        const found = Object.keys(raw).find(k => String(k).toLowerCase().replace(/\s+/g, '_') === c);
         if (found) { v = raw[found]; break; }
       }
     }
@@ -173,7 +175,7 @@ function normalizeEmployee(raw) {
   if (!empId) {
     empId = `srv_${Math.random().toString(36).slice(2, 12)}`;
     autofilled.push("employee_id");
-    try { others._generated_employee_id = true; } catch(e){}
+    try { others._generated_employee_id = true; } catch (e) { }
   }
   emp.employee_id = String(empId);
 
@@ -182,19 +184,19 @@ function normalizeEmployee(raw) {
   if (!nombre) {
     emp.nombre = DEFAULT_TEXT;
     autofilled.push("nombre");
-    try { others._generated_nombre = true; } catch(e){}
+    try { others._generated_nombre = true; } catch (e) { }
   } else emp.nombre = String(nombre);
 
   // genero (aliases)
   let gen = null;
   if (raw) {
-    const cand = ["genero","sexo","gender","sex"];
+    const cand = ["genero", "sexo", "gender", "sex"];
     for (const c of cand) {
       if (raw[c] !== undefined && String(raw[c]).trim() !== "") {
         gen = String(raw[c]).trim();
         break;
       }
-      const found = Object.keys(raw).find(k => String(k).toLowerCase().replace(/\s+/g,'_') === c);
+      const found = Object.keys(raw).find(k => String(k).toLowerCase().replace(/\s+/g, '_') === c);
       if (found) { gen = raw[found]; break; }
     }
   }
@@ -209,7 +211,7 @@ function normalizeEmployee(raw) {
   }
 
   // departamento
-  setTextField("departamento", ["departamento","dept","area","department","division"]);
+  setTextField("departamento", ["departamento", "dept", "area", "department", "division"]);
 
   // fecha_ingreso
   let fecha = sanitizeIncomingValue(raw && (raw.fecha_ingreso || raw.start_date || raw.fechaInicio));
@@ -219,7 +221,7 @@ function normalizeEmployee(raw) {
   } else emp.fecha_ingreso = String(fecha);
 
   // numeric fields
-  setNumField("antiguedad_meses", ["antiguedad_meses","antiguedad","años_trabaja","años_enla_empr","años_enel"]);
+  setNumField("antiguedad_meses", ["antiguedad_meses", "antiguedad", "años_trabaja", "años_enla_empr", "años_enel"]);
 
   // SALARIO
   let salarioRaw = null;
@@ -229,7 +231,7 @@ function normalizeEmployee(raw) {
   let salarioVal = null;
   if (salarioRaw !== null && salarioRaw !== undefined && String(salarioRaw).trim() !== "") {
     try {
-      const s = String(salarioRaw).replace(",",".").trim();
+      const s = String(salarioRaw).replace(",", ".").trim();
       if (/(por_hora|hora|\/h|h\/|hour)/i.test(s)) {
         const m = s.match(/([0-9]+(?:\.[0-9]+)?)/);
         if (m) salarioVal = Math.round(parseFloat(m[1]) * 160 * 100) / 100;
@@ -244,22 +246,22 @@ function normalizeEmployee(raw) {
 
   // satisfaccion
   let satVal = sanitizeIncomingValue(raw && (raw.satisfaccion || raw.satisfaccion_conel_entorno || raw.sastisfacion_laboral || raw.satisfaccion_laboral || raw.satisfaction));
-  if (satVal === null || satVal === undefined || String(satVal).trim()==="") {
+  if (satVal === null || satVal === undefined || String(satVal).trim() === "") {
     emp.satisfaccion = DEFAULT_NUM;
     autofilled.push("satisfaccion");
   } else {
-    const n = Number(String(satVal).replace(",","."));
+    const n = Number(String(satVal).replace(",", "."));
     emp.satisfaccion = isFinite(n) ? n : DEFAULT_NUM;
     if (!isFinite(n)) autofilled.push("satisfaccion");
   }
 
   // ingresos_mensuales - if present use, else try salario
   let ingVal = sanitizeIncomingValue(raw && (raw.ingresos_mensuales || raw.ingresos || raw.income));
-  if (ingVal === null || ingVal === undefined || String(ingVal).trim()==="") {
+  if (ingVal === null || ingVal === undefined || String(ingVal).trim() === "") {
     emp.ingresos_mensuales = emp.salario || DEFAULT_NUM;
     if (emp.ingresos_mensuales === DEFAULT_NUM) autofilled.push("ingresos_mensuales");
   } else {
-    const n = Number(String(ingVal).replace(",","."));
+    const n = Number(String(ingVal).replace(",", "."));
     emp.ingresos_mensuales = isFinite(n) ? n : DEFAULT_NUM;
     if (!isFinite(n)) autofilled.push("ingresos_mensuales");
   }
@@ -267,13 +269,13 @@ function normalizeEmployee(raw) {
   // HORAS_EXTRAS (aliases ampliados)
   let hrs = null;
   if (raw) {
-    const candidates = ["horas_extras","horas","extra_hours","extra_hours_worked","overtime","overtime_hours","hrs_extra"];
+    const candidates = ["horas_extras", "horas", "extra_hours", "extra_hours_worked", "overtime", "overtime_hours", "hrs_extra"];
     for (const c of candidates) {
       if (raw[c] !== undefined && String(raw[c]).trim() !== "") {
         hrs = raw[c];
         break;
       }
-      const lc = Object.keys(raw).find(k => String(k).toLowerCase().replace(/\s+/g,'_') === c);
+      const lc = Object.keys(raw).find(k => String(k).toLowerCase().replace(/\s+/g, '_') === c);
       if (lc) { hrs = raw[lc]; break; }
     }
   }
@@ -281,40 +283,40 @@ function normalizeEmployee(raw) {
     emp.horas_extras = DEFAULT_NUM;
     autofilled.push("horas_extras");
   } else {
-    const n = Number(String(hrs).replace(",","."));
+    const n = Number(String(hrs).replace(",", "."));
     emp.horas_extras = isFinite(n) ? n : DEFAULT_NUM;
     if (!isFinite(n)) autofilled.push("horas_extras");
   }
 
   // puesto, rol_del_puesto
-  setTextField("puesto", ["puesto","position","cargo","rol_del_puesto","rol"]);
-  setTextField("rol_del_puesto", ["rol_del_puesto","role","rol"]);
+  setTextField("puesto", ["puesto", "position", "cargo", "rol_del_puesto", "rol"]);
+  setTextField("rol_del_puesto", ["rol_del_puesto", "role", "rol"]);
 
   // edad
   let edad = sanitizeIncomingValue(raw && (raw.edad || raw.age));
-  if (edad === null || edad === undefined || String(edad).trim()==="") {
+  if (edad === null || edad === undefined || String(edad).trim() === "") {
     emp.edad = DEFAULT_NUM;
     autofilled.push("edad");
   } else {
-    const n = Number(String(edad).replace(",","."));
+    const n = Number(String(edad).replace(",", "."));
     emp.edad = isFinite(n) ? n : DEFAULT_NUM;
     if (!isFinite(n)) autofilled.push("edad");
   }
 
   // created/updated timestamps
-  const nowts = new Date().toISOString().slice(0,19).replace('T',' ');
+  const nowts = new Date().toISOString().slice(0, 19).replace('T', ' ');
   emp.creado_at = raw && raw.creado_at ? String(raw.creado_at) : nowts;
   emp.actualizado_at = raw && raw.actualizado_at ? String(raw.actualizado_at) : emp.creado_at;
 
   // build 'otros'
   if (raw && raw.otros && typeof raw.otros === 'object') {
-    others = {...others, ...raw.otros};
+    others = { ...others, ...raw.otros };
   } else if (raw && raw.otros && typeof raw.otros === 'string') {
     try {
       const parsed = JSON.parse(raw.otros);
-      if (typeof parsed === 'object') others = {...others, ...parsed};
+      if (typeof parsed === 'object') others = { ...others, ...parsed };
       else others._otros_raw = raw.otros;
-    } catch(e) {
+    } catch (e) {
       others._otros_raw = raw.otros;
     }
   }
@@ -499,7 +501,7 @@ app.post("/api/empleados_raw/bulk", async (req, res) => {
     await connection.beginTransaction();
 
     // define fixed column order for insert (incluye genero)
-    const cols = ["employee_id","nombre","genero","departamento","fecha_ingreso","antiguedad_meses","salario","satisfaccion","ingresos_mensuales","horas_extras","puesto","rol_del_puesto","otros","creado_at","actualizado_at","edad"];
+    const cols = ["employee_id", "nombre", "genero", "departamento", "fecha_ingreso", "antiguedad_meses", "salario", "satisfaccion", "ingresos_mensuales", "horas_extras", "puesto", "rol_del_puesto", "otros", "creado_at", "actualizado_at", "edad"];
 
     const CHUNK = parseInt(process.env.EMP_INSERT_CHUNK || "400", 10);
 
@@ -545,7 +547,7 @@ app.post("/api/empleados_raw/bulk", async (req, res) => {
     if (connection) await connection.rollback();
     console.error("ERROR /api/empleados_raw/bulk:", err && err.stack ? err.stack : err);
     const resp = { ok: false, error: String(err) };
-    if (DEBUG && err && err.stack) resp.stack = err.stack.split('\n').slice(0,10);
+    if (DEBUG && err && err.stack) resp.stack = err.stack.split('\n').slice(0, 10);
     return res.status(500).json(resp);
   } finally {
     if (connection) connection.release();
@@ -612,7 +614,7 @@ app.post("/api/predictions/bulk", async (req, res) => {
     if (connection) await connection.rollback();
     console.error("ERROR /api/predictions/bulk:", err && err.stack ? err.stack : err);
     const resp = { ok: false, error: String(err) };
-    if (DEBUG && err && err.stack) resp.stack = err.stack.split('\n').slice(0,10);
+    if (DEBUG && err && err.stack) resp.stack = err.stack.split('\n').slice(0, 10);
     return res.status(500).json(resp);
   } finally {
     if (connection) connection.release();
