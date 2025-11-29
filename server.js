@@ -27,6 +27,7 @@ const dbConfig = {
 };
 const pool = mysql.createPool(dbConfig);
 
+
 // ------------------------------
 // Middleware
 // ------------------------------
