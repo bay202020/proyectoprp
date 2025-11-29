@@ -78,15 +78,21 @@ try {
   sessionStore = null;
 }
 
-
+app.set('trust proxy', 1); // confía en el proxy (Railway/Heroku/NGINX)
 app.use(session({
-  key: 'prp_sid',
+  name: 'prp_sid',
   secret: process.env.SESSION_SECRET || 'clave_segura',
-  store: sessionStore || undefined,
+  store: sessionStore || undefined,   // tu MySQLStore si está inicializado
   resave: false,
   saveUninitialized: false,
-  cookie: { maxAge: 1000 * 60 * 60 * 2, secure: process.env.NODE_ENV === 'production', sameSite: 'lax' }
+  cookie: {
+    maxAge: 1000 * 60 * 60 * 24,    // 1 día
+    secure: process.env.NODE_ENV === 'production', // true en prod con HTTPS real
+    httpOnly: true,
+    sameSite: 'lax'                 // 'lax' suele ser lo más compatible para login/redirect
+  }
 }));
+
 
 
 
