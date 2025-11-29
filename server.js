@@ -10,22 +10,28 @@ const fs = require('fs');
 
 const app = express();
 const PORT = process.env.PORT || 8080;
-app.listen(PORT, () => console.log(`Servidor corriendo en http://localhost:${PORT}`));
 const DEBUG = process.env.DEBUG === 'true' || false;
 
 // ------------------------------
 // DB pool
 // ------------------------------
-
 const dbConfig = {
-  host: process.env.DB_HOST || 'interchange.proxy.rlwy.net',
-  user: process.env.DB_USER || 'root',
-  password: process.env.DB_PASS || 'huRlZiEFHPKlhhkJnwtOBtDIBfYzOCNY',
-  database: process.env.DB_NAME || 'railway',
+  host: process.env.DB_HOST,
+  port: process.env.DB_PORT ? parseInt(process.env.DB_PORT, 10) : undefined,
+  user: process.env.DB_USER,
+  password: process.env.DB_PASS,
+  database: process.env.DB_NAME,
   waitForConnections: true,
   connectionLimit: parseInt(process.env.DB_CONN_LIMIT || "10", 10),
-  queueLimit: 0
+  queueLimit: 0,
+  ssl: { rejectUnauthorized: false }
 };
+console.log("RAILWAY DB CONFIG ->", {
+  DB_HOST: process.env.DB_HOST,
+  DB_PORT: process.env.DB_PORT,
+  DB_USER: process.env.DB_USER,
+  DB_NAME: process.env.DB_NAME
+});
 const pool = mysql.createPool(dbConfig);
 
 
@@ -41,11 +47,10 @@ const MySQLStore = require('express-mysql-session')(session);
 // Opciones para el store (puedes reusar dbConfig ya definido)
 const sessionStoreOptions = {
   host: dbConfig.host,
-  port: dbConfig.port || 3306,
+  port: dbConfig.port || parseInt(process.env.DB_PORT || "16015", 10),
   user: dbConfig.user,
   password: dbConfig.password,
   database: dbConfig.database,
-  // opcionales:
   createDatabaseTable: true,
   schema: {
     tableName: 'sessions',
