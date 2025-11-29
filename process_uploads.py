@@ -34,9 +34,9 @@ PROCESSED_DIR.mkdir(parents=True, exist_ok=True)
 LOGS_DIR.mkdir(parents=True, exist_ok=True)
 BAD_ROWS_FILE.touch(exist_ok=True)
 
-BACKEND_EMPS_URL = os.environ.get("BACKEND_EMPS_URL", "cihuatadatalab.up.railway.app/api/empleados_raw/bulk")
-PREDICT_URL = os.environ.get("PREDICT_URL", "cihuatadatalab.up.railway.app/predict")
-BACKEND_PRED_URL = os.environ.get("BACKEND_PRED_URL", "cihuatadatalab.up.railway.app/api/predictions/bulk")
+BACKEND_EMPS_URL = os.environ.get("BACKEND_EMPS_URL", "https://cihuatadatalab.up.railway.app/api/empleados_raw/bulk")
+PREDICT_URL = os.environ.get("PREDICT_URL", "https://cihuatadatalab.up.railway.app/predict")
+BACKEND_PRED_URL = os.environ.get("BACKEND_PRED_URL", "https://cihuatadatalab.up.railway.app/api/predictions/bulk")
 
 EMP_CHUNK = int(os.environ.get("EMP_CHUNK", "400"))   # empleados por POST al backend
 BATCH = int(os.environ.get("PRED_BATCH", "200"))     # filas enviadas al predictor por POST
