@@ -31,6 +31,7 @@ const pool = mysql.createPool(dbConfig);
 // ------------------------------
 // Middleware
 // ------------------------------
+app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.json({ limit: process.env.EXPRESS_JSON_LIMIT || '20mb' }));
 app.use(express.urlencoded({ extended: true, limit: process.env.EXPRESS_URLENCODED_LIMIT || '20mb' }));
 
@@ -70,7 +71,7 @@ app.use(session({
 }));
 
 
-app.use(express.static(path.join(__dirname, 'public')));
+
 
 // ------------------------------
 // Uploads (multer)
