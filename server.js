@@ -645,8 +645,10 @@ app.post("/api/predictions/bulk", async (req, res) => {
 // ------------------------------
 app.get('/health', (req, res) => res.send('OK'));
 
-app.listen(PORT, () => {
-  console.log(`Servidor corriendo en http://localhost:${PORT}`);
-  console.log('Health: GET /health');
+
+// ... otras rutas/middleware arriba ...
+
+app.listen(PORT, '0.0.0.0', () => {
+  console.log(`Servidor corriendo en http://0.0.0.0:${PORT} (env PORT=${process.env.PORT})`);
 });
 
