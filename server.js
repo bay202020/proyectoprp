@@ -1,5 +1,12 @@
 // server.js (UNIFICADO) - incluye mapeo ampliado de horas_extras y genero
 require('dotenv').config();
+process.on('uncaughtException', (err) => {
+  console.error('UNCAUGHT EXCEPTION', err && err.stack ? err.stack : err);
+});
+process.on('unhandledRejection', (reason, p) => {
+  console.error('UNHANDLED REJECTION at', p, 'reason:', reason && (reason.stack || reason));
+});
+
 const express = require('express');
 const session = require('express-session');
 const mysql = require('mysql2/promise');
@@ -42,39 +49,45 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.json({ limit: process.env.EXPRESS_JSON_LIMIT || '20mb' }));
 app.use(express.urlencoded({ extended: true, limit: process.env.EXPRESS_URLENCODED_LIMIT || '20mb' }));
 
-const MySQLStore = require('express-mysql-session')(session);
+let sessionStore;
+try {
+  const MySQLStore = require('express-mysql-session')(session);
 
-// Opciones para el store (puedes reusar dbConfig ya definido)
-const sessionStoreOptions = {
-  host: dbConfig.host,
-  port: dbConfig.port || parseInt(process.env.DB_PORT || "16015", 10),
-  user: dbConfig.user,
-  password: dbConfig.password,
-  database: dbConfig.database,
-  createDatabaseTable: true,
-  schema: {
-    tableName: 'sessions',
-    columnNames: {
-      session_id: 'session_id',
-      expires: 'expires',
-      data: 'data'
+  const sessionStoreOptions = {
+    host: dbConfig.host,
+    port: dbConfig.port || parseInt(process.env.DB_PORT || "16015", 10),
+    user: dbConfig.user,
+    password: dbConfig.password,
+    database: dbConfig.database,
+    createDatabaseTable: true,
+    schema: {
+      tableName: 'sessions',
+      columnNames: {
+        session_id: 'session_id',
+        expires: 'expires',
+        data: 'data'
+      }
     }
-  }
-};
-const sessionStore = new MySQLStore(sessionStoreOptions);
+  };
+
+  sessionStore = new MySQLStore(sessionStoreOptions);
+  console.log('Session store inicializada (MySQL).');
+} catch (err) {
+  console.error('WARNING: No se pudo inicializar MySQL session store, usando MemoryStore como fallback. Error:', err && (err.stack || err));
+  // Fallback: no pasar store (usa MemoryStore, no recomendado en prod pero evita crash)
+  sessionStore = null;
+}
+
 
 app.use(session({
   key: 'prp_sid',
   secret: process.env.SESSION_SECRET || 'clave_segura',
-  store: sessionStore,
+  store: sessionStore || undefined,
   resave: false,
   saveUninitialized: false,
-  cookie: {
-    maxAge: 1000 * 60 * 60 * 2,
-    secure: process.env.NODE_ENV === 'production', // true solo si usas HTTPS
-    sameSite: 'lax'
-  }
+  cookie: { maxAge: 1000 * 60 * 60 * 2, secure: process.env.NODE_ENV === 'production', sameSite: 'lax' }
 }));
+
 
 
 
@@ -630,6 +643,14 @@ app.post("/api/predictions/bulk", async (req, res) => {
 // ------------------------------
 // Start
 // ------------------------------
+app.get('/health', (req, res) => res.send('OK'));
+
+app.listen(PORT, () => {
+  console.log(`Servidor corriendo en http://localhost:${PORT}`);
+  console.log('Health: GET /health');
+});
+
+
 app.listen(PORT, () => {
   console.log(`Servidor corriendo en http://localhost:${PORT}`);
 });
